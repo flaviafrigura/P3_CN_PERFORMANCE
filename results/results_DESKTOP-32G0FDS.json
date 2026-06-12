@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-12T02:19:02.010345",
+  "timestamp": "2026-06-12T20:09:12.100225",
   "system_info": {
     "hostname": "DESKTOP-32G0FDS",
     "os": "Windows 10",
@@ -11,25 +11,35 @@
     "architecture": "AMD64"
   },
   "cpu": {
-    "cpu_integer_throughput_s": 2.405445900047198,
-    "cpu_float_throughput_s": 2.854168100049719,
-    "cpu_multithread_s": 0.9249350999016315
+    "cpu_integer_throughput_s": 1.4769633000032627,
+    "cpu_float_throughput_s": 1.8093332000062219,
+    "cpu_multithread_s": 0.46028110000042943
   },
   "memory": {
-    "mem_sequential_read_s": 0.39914359990507364,
-    "mem_random_access_s": 0.06254149996675551,
-    "mem_write_bandwidth_s": 0.2641771000344306,
-    "cache_l1_s": 0.06928420020267367,
-    "cache_l2_s": 0.032246500020846725,
-    "cache_l3_s": 0.061494699912145734,
-    "cache_ram_s": 0.0797321000136435
+    "mem_sequential_read_s": 0.22274319999996806,
+    "mem_random_access_s": 0.033980100000917446,
+    "mem_write_bandwidth_s": 0.13977169999998296,
+    "cache_l1_s": 0.030595600001106504,
+    "cache_l2_s": 0.016251000000920612,
+    "cache_l3_s": 0.028925500002515037,
+    "cache_ram_s": 0.05767070000001695
   },
   "workloads": {
-    "sort_numpy_s": 0.2822316999081522,
-    "sort_python_s": 0.7871918000746518,
-    "join_pandas_s": 0.14339120010845363,
-    "ml_train_s": 3.9260359001345932,
-    "ml_inference_s": 0.056835300056263804,
-    "sql_benchmark_s": 2.6582693001255393
+    "sort_numpy_s": 0.13713360000110697,
+    "sort_python_s": 0.3604583999986062,
+    "join_pandas_s": 0.05790120000165189,
+    "ml_train_s": 2.445744199998444,
+    "ml_inference_s": 0.041093899999395944,
+    "sql_benchmark_s": 0.9853621000002022
+  },
+  "gpu": {
+    "gpu_backend": "cpu_fallback",
+    "gpu_name": "N/A",
+    "gpu_vram_gb": 0.0,
+    "gpu_matmul_s": 0.9663179999988643,
+    "gpu_elementwise_s": 0.9870251000029384,
+    "gpu_h2d_transfer_s": 0.07413049999740906,
+    "gpu_d2h_transfer_s": 0.0720595000020694,
+    "gpu_multistream_s": 0.6696799000055762
   }
 }
