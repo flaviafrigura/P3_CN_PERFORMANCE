@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-06-04T23:42:14.194092",
+  "system_info": {
+    "hostname": "vm",
+    "os": "Linux 6.18.5",
+    "cpu": "x86_64",
+    "cpu_cores": 1,
+    "cpu_threads": 1,
+    "ram_gb": 3.91,
+    "python": "3.12.3",
+    "architecture": "x86_64"
+  },
+  "cpu": {
+    "cpu_integer_throughput_s": 0.7487359429999856,
+    "cpu_float_throughput_s": 1.3689632549999828,
+    "cpu_multithread_s": 0.05016113400000677
+  },
+  "memory": {
+    "mem_sequential_read_s": 0.14071005199997444,
+    "mem_random_access_s": 0.025683665999963523,
+    "mem_write_bandwidth_s": 0.15071259699999473,
+    "cache_l1_s": 0.021273368000038317,
+    "cache_l2_s": 0.01216106999999056,
+    "cache_l3_s": 0.01764283299996805,
+    "cache_ram_s": 0.02792098800000531
+  },
+  "workloads": {
+    "sort_numpy_s": 0.08046329599994806,
+    "sort_python_s": 0.27566304900000205,
+    "join_pandas_s": 0.05954308299999411,
+    "ml_train_s": 7.117994882000005,
+    "ml_inference_s": 0.041035406999981205,
+    "sql_benchmark_s": 0.7400327490000222
+  }
+}
