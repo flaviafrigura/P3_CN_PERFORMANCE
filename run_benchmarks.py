@@ -62,8 +62,6 @@ def main():
         json.dump(all_results, f, indent=2, ensure_ascii=False)
 
     ok(f"Rezultate salvate în: {out_file}")
-    print(f"\n{CYAN}{BOLD}  Rulează acum același script pe Google Colab!")
-    print(f"  Apoi rulează: python generate_report.py{RESET}\n")
 
 if __name__ == "__main__":
     main()
