@@ -1,3 +1,14 @@
+import json
+import os
+import platform
+import sys
+from datetime import datetime
+
+from scripts.bench_cpu        import run_cpu_benchmarks
+from scripts.bench_memory     import run_memory_benchmarks
+from scripts.bench_workloads  import run_workload_benchmarks
+from scripts.system_info      import get_system_info
+
 GREEN  = "\033[92m"
 YELLOW = "\033[93m"
 CYAN   = "\033[96m"
