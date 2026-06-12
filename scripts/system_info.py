@@ -1,3 +1,8 @@
+import platform
+import socket
+import psutil
+import sys
+
 def get_system_info() -> dict:
     uname = platform.uname()
 
