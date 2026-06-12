@@ -7,6 +7,7 @@ from datetime import datetime
 from scripts.bench_cpu        import run_cpu_benchmarks
 from scripts.bench_memory     import run_memory_benchmarks
 from scripts.bench_workloads  import run_workload_benchmarks
+from scripts.bench_gpu        import run_gpu_benchmarks
 from scripts.system_info      import get_system_info
 
 GREEN  = "\033[92m"
@@ -35,7 +36,7 @@ def ok(msg):
 def main():
     banner()
 
-    section("PASUL 1/4 — Colectare informații sistem")
+    section("PASUL 1/5 — Colectare informații sistem")
     sys_info = get_system_info()
     ok(f"CPU:       {sys_info['cpu']}")
     ok(f"RAM:       {sys_info['ram_gb']} GB")
@@ -43,20 +44,31 @@ def main():
     ok(f"Python:    {sys_info['python']}")
     ok(f"CPU cores: {sys_info['cpu_cores']} (logice: {sys_info['cpu_threads']})")
 
-    section("PASUL 2/4 — Benchmark CPU (throughput integer & float)")
+    section("PASUL 2/5 — Benchmark CPU (throughput integer & float)")
     cpu_results = run_cpu_benchmarks()
     for name, val in cpu_results.items():
-        ok(f"{name}: {val:.4f}s")
+        if isinstance(val, float):
+            ok(f"{name}: {val:.4f}s")
+        else:
+            ok(f"{name}: {val}")
 
-    section("PASUL 3/4 — Benchmark Memorie & Cache")
+    section("PASUL 3/5 — Benchmark Memorie & Cache")
     mem_results = run_memory_benchmarks()
     for name, val in mem_results.items():
         ok(f"{name}: {val:.4f}s")
 
-    section("PASUL 4/4 — Workload-uri reale (sortare, join, ML, SQL)")
+    section("PASUL 4/5 — Workload-uri reale (sortare, join, ML, SQL)")
     wl_results = run_workload_benchmarks()
     for name, val in wl_results.items():
         ok(f"{name}: {val:.4f}s")
+
+    section("PASUL 5/5 — Benchmark GPU")
+    gpu_results = run_gpu_benchmarks()
+    ok(f"Backend:   {gpu_results['gpu_backend']}")
+    ok(f"GPU:       {gpu_results['gpu_name']}  ({gpu_results['gpu_vram_gb']} GB VRAM)")
+    for name, val in gpu_results.items():
+        if name.endswith("_s"):
+            ok(f"{name}: {val:.4f}s")
 
     section("SALVARE REZULTATE")
     all_results = {
@@ -65,6 +77,7 @@ def main():
         "cpu":          cpu_results,
         "memory":       mem_results,
         "workloads":    wl_results,
+        "gpu":          gpu_results,
     }
 
     os.makedirs("results", exist_ok=True)
