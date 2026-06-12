@@ -31,5 +31,15 @@
     "ml_train_s": 7.117994882000005,
     "ml_inference_s": 0.041035406999981205,
     "sql_benchmark_s": 0.7400327490000222
+  },
+  "gpu": {
+    "gpu_backend": "cpu_fallback",
+    "gpu_name": "N/A",
+    "gpu_vram_gb": 0.0,
+    "gpu_matmul_s": 1.2847361200000125,
+    "gpu_elementwise_s": 1.1034522890000211,
+    "gpu_h2d_transfer_s": 0.08921034599999812,
+    "gpu_d2h_transfer_s": 0.08634128900000344,
+    "gpu_multistream_s": 0.7812934560000088
   }
 }
